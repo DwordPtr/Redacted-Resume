@@ -1,0 +1,142 @@
+%Bryan Tidwell latex resume
+\documentclass[11pt,oneside]{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=.75in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Bryan Tidwell}
+\newcommand{\email}{btidwell4@my.apsu.edu}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\fontfamily{phv}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\fontfamily{phv}\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2 \\
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+\fontfamily{ppl} \selectfont
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \hfill \email} \\ \\
+\vspace{-1pt}{\url{https://www.linkedin.com/in/bryantidwell2}} \\
+\vspace{-1pt}{\url{https://github.com/DwordPtr}}
+\vspace{8 pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experience}
+
+	\begin{ressubsec}{Franklin American Mortgage Company}{Franklin, TN}{Developer I Mar 2016 - Present}
+		\ressubitem{Contributed to MockRunner.}
+		\ressubitem{Maintained business critical legacy Java apps.}
+		\ressubitem{Worked on Spring Boot microservice to integrate customer data with Salesforce.}
+	\end{ressubsec}
+
+
+	\begin{ressubsec}{Austin Peay Computer Science Dept}{Clarksville, TN}{Lab Manager Aug 2015 - Dec 2015}
+		\ressubitem{Tutored students in Math and Computer Science concepts}
+		\ressubitem{Provided assistance to students setting up development enviornment config files, importing libraries, IDE projects, Unix commands, etc.}
+	\end{ressubsec}
+
+	\begin{ressubsec}{Comdata}{Brentwood, TN}{Business Objects Analyst (Intern then 1099 contractor) May 2014 - Dec 2014}
+		\ressubitem{Performed QA on various BI reports and ETL jobs}
+    \ressubitem{Used scripting tools to extend automated tests}
+    \ressubitem{Retained as contractor on a mostly remote basis, after the internship.}
+	\end{ressubsec}
+
+\end{ressection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+	\begin{ressubsec}{Austin Peay State University}{Clarksville, TN}{Major in Computer Science with Minors in Mathematics and Philosophy Dec, 2015}
+		\ressubitem{GPA: 3.65 \textit{Cum Laude} ( $\approx 3.8$ Computer Science GPA)}
+	\end{ressubsec}
+\end{ressection}
+
+\begin{ressection}{Skills}
+\begin{reslist}{Programming Languages:}
+  \ressubitem{Proficient with: Java, Sql} 
+  \ressubitem{Exposure: C++, Python, C\#, ML, Prolog, Javascript, TypeScript, Ruby}
+\end{reslist}
+\begin{reslist}{Tools}
+	\ressubitem{Proficient with: git, maven, Intellij, Spring/Spring Boot, REST, JPA zsh/bash, Atlassian tooling, etc}
+	\ressubitem{Exposure: Docker, Angular, Vagrant }
+\end{reslist}
+\end{ressection}
+
+\begin{ressection}{Awards}
+  \resitem{George Brotherton Memorial Scholarship}
+\end{ressection}
+\end{document}
