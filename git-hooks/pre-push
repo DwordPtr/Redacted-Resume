@@ -1,0 +1,3 @@
+#!/bin/sh
+./build.sh
+./dbox_push.sh
